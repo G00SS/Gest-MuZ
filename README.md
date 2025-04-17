@@ -1,6 +1,6 @@
 # Gest'MuZ
 Une application web (PHP/MySQL) pour générer des statistiques de fréquentation d'un musée ou d'un établissement touristique...
-<span style="color:rgba(0, 100, 0, 0.8)">*A Web App (PHP/MySQL) to generate statistics on visits to a museum/touristic establishment...*</span>
+*A Web App (PHP/MySQL) to generate statistics on visits to a museum/touristic establishment...*
 
 Cette application web permet d'enregistrer des informations sur les visiteurs d'un musée ou tout autre établissement touristique, qu'il s'agisse de visites individuelles ou de groupes, scolaires ou non.
 Il suffit de remplir un court formulaire pour chaque visite afin de générer automatiquement des statistiques sur la fréquentation, la provenance, les centres d'intérêt des visiteurs, etc.
