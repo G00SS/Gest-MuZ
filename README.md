@@ -11,10 +11,9 @@ Simply fill out a short form for each visit to automatically generate statistics
 
 ## Pré-Requis / *Prerequisites*
 Écrite principalement en HTML et PHP, cette application web nécessite uniquement un serveur web opérationnel avec une version minimale de PHP 7.0 et un accès à un serveur MySQL. Elle peut donc fonctionner sur une instance XAMP, une machine virtuelle Linux, un Raspberry Pi ou tout autre ordinateur répondant à ces exigences.
-
 *Written primarily in HTML and PHP, this web application requires only a working web server with a minimum version of PHP 7.0 and access to a MySQL server. This application can therefore run on a XAMP instance, a Linux VM, a Raspberry Pi, or any other computer that meets these requirements.*
 
 Les instructions d'installation et d'utilisation suivantes sont basées sur une nouvelle installation de Debian avec Nginx comme serveur Web et MariaDB comme serveur MySQL.
-
 *The following installation and usage instructions are based on a Debian's fresh install with Nginx as web server and MariaDB as MySQL server.*
 
+## Comment Essayer depuis un Systeme Vierge / *How to Try demo from Scratch*
