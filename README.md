@@ -17,7 +17,7 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 ## Comment Installer depuis un Systeme Vierge / *How to Install from Scratch*
 
 * Se connecter sur le serveur et y installer le serveur Web Nginx, PHP, et MariaDB (MySQL) :</br>  
-<code># apt install nginx mariadb-server mariadb-client php php-fpm php-mysql php-common</code>
+```# apt install nginx mariadb-server mariadb-client php php-fpm php-mysql php-common```
 
 * Récupérer le dossier du site web :</br>
 ```
@@ -28,12 +28,14 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 <code># mv gestmuz/* /var/www/html/</code>
 
 * Créer une base de données et son utilisateur pour l'application :</br>
-<code># mysql -u root -p</code></br>
-<code>mysql> CREATE USER 'gestmuz'@'localhost' IDENTIFIED BY 'PUT-YOUR-PASSWORD-HERE';</code></br>
-<code>mysql> CREATE DATABASE IF NOT EXISTS `bmus`;</code></br>
-<code>mysql> GRANT ALL PRIVILEGES ON `bmus`.* TO 'gestmuz'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;</code></br>
-<code>mysql> FLUSH PRIVILEGES;</code></br>
-<code>mysql> QUIT;</code>
+```# mysql -u root -p```
+```
+mysql> CREATE USER 'gestmuz'@'localhost' IDENTIFIED BY 'PUT-YOUR-PASSWORD-HERE';
+mysql> CREATE DATABASE IF NOT EXISTS `bmus`;
+mysql> GRANT ALL PRIVILEGES ON `bmus`.* TO 'gestmuz'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
+mysql> FLUSH PRIVILEGES;
+mysql> QUIT;
+```
 
 * Importer la structure de la base de données</br> 
 <code># mysql -u gestmuz -p bmus < /var/www/html/bdd/bmus.sql</code>
