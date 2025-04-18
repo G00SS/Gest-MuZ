@@ -7,6 +7,8 @@ Il suffit de remplir un court formulaire pour chaque visite afin de générer au
 *This french web application allows you to record informations about visitors to an establishment, whether they are individual visits or groups, whether school-based or not.
 Simply fill out a short form for each visit to automatically generate statistics on attendance, origin, interests, and more.*
 
+
+
 ## Pré-Requis / *Prerequisites*
 Écrite principalement en HTML et PHP, cette application web nécessite uniquement un serveur web opérationnel avec une version minimale de PHP 7.0 et un accès à un serveur MySQL. Elle peut donc fonctionner sur une instance XAMP, une machine virtuelle Linux, un Raspberry Pi ou tout autre ordinateur répondant à ces exigences.</br>
 *Written primarily in HTML and PHP, this web application requires only a working web server with a minimum version of PHP 7.0 and access to a MySQL server. This application can therefore run on a XAMP instance, a Linux VM, a Raspberry Pi, or any other computer that meets these requirements.*
