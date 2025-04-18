@@ -27,8 +27,8 @@
       </div>
       <div class="card-body">
         <?php
-        $req = $dbh->prepare('SELECT tindiv.id as "ID" ,tindiv.create_date as "Date",tindiv.create_time as "Heure",tindiv.nb as "Nombre",tsoci_ages.name as "Catégorie",tindiv.primo as "Primovisiteur", tindiv.resi as "Issoldunois", tindiv.col as "Habitant CCPI" ,tloc_depts.name as "Département",tloc_pays.name as "Pays" FROM `tindiv` INNER JOIN tsoci_ages ON tindiv.grpage_id=tsoci_ages.id INNER JOIN tloc_depts ON tindiv.depts_id=tloc_depts.id INNER JOIN tloc_pays ON tindiv.pays_id=tloc_pays.id ORDER BY `id` DESC LIMIT 1000');
-        $req->execute();
+        $req = $dbh->prepare('SELECT tindiv.id as "ID" ,tindiv.create_date as "Date",tindiv.create_time as "Heure",tindiv.nb as "Nombre",tsoci_ages.name as "Catégorie",tindiv.primo as "Primovisiteur", tindiv.resi as ?, tindiv.col as ? ,tloc_depts.name as "Département",tloc_pays.name as "Pays" FROM `tindiv` INNER JOIN tsoci_ages ON tindiv.grpage_id=tsoci_ages.id INNER JOIN tloc_depts ON tindiv.depts_id=tloc_depts.id INNER JOIN tloc_pays ON tindiv.pays_id=tloc_pays.id ORDER BY `id` DESC LIMIT 1000');
+        $req->execute(array($resident,$collectivite));
         ?>
 
         <table id="indiv-table" class="table table-striped nowrap" style="width:100%">
