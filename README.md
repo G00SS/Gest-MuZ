@@ -43,7 +43,7 @@ mysql> FLUSH PRIVILEGES;
 mysql> QUIT;
 ```
 
-* Importer la structure de la base de données</br> 
+* Importer la structure de la base de données :</br> 
 ```
 # mysql -u gestmuz -p bmus < /var/www/html/bdd/bmus.sql
 ```
@@ -84,9 +84,9 @@ index index.php index.html index.htm index.nginx-debian.html;
 * Continuez en personnalisant votre structure *(Paramètres>Personnalisations)* afin de renseigner son nom, ses horaires d'ouverture...</br>
 
 * Découvrez la configuration de votre structure et adaptez-la en fonction de vos besoins *(Paramètres>Configuration)* </br>
-> Ces 3 menus ne sont accessibles qu'aux administrateurs du logiciel
+   > Ces 3 menus ne sont accessibles qu'aux administrateurs du logiciel
 
-* Renseignez les activités de votre structure (les expositions programmées, les ateliers prévus, les évènements ponctuels à venir...) </br>
-> Ces 3 menus ne sont pas accessibles aux simples utilisateurs du logiciel
+* Renseignez les activités de votre structure (les Expositions programmées, les Ateliers prévus, les Evènements ponctuels à venir...) </br>
+   > Ces 3 menus ne sont pas accessibles aux simples utilisateurs du logiciel
 
 **Vous pouvez dès à présent commencer à enregistrer vos visites !**
