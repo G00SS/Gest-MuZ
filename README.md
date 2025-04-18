@@ -101,4 +101,4 @@ Vous pouvez aussi créer un compte standard (sans droit d'administration sur le 
     > Ces 3 menus ne sont pas accessibles aux simples utilisateurs du logiciel
 
 </br>
-<h2 align="center"><strong>**  Vous pouvez dès à présent commencer à enregistrer vos visites !  **</strong></h2>
+<h2 align="center"><strong>Vous pouvez dès à présent commencer à enregistrer vos visites !</strong></h2>
