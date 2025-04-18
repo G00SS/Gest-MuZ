@@ -31,7 +31,7 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 # mv gestmuz/* /var/www/html/
 ```
 
-* Créer une base de données et son utilisateur pour l'application :</br>
+* Créer une base de données et son utilisateur (remplacez le mot de passe par le votre) pour l'application :</br>
 ```
 # mysql -u root -p
 ```
