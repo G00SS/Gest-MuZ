@@ -1,21 +1,6 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1deb1
--- https://www.phpmyadmin.net/
---
--- Hôte : localhost:3306
--- Généré le : lun. 03 mars 2025 à 13:00
--- Version du serveur : 10.11.6-MariaDB-0+deb12u1
--- Version de PHP : 8.3.12
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de données : `bmus`
@@ -189,7 +174,8 @@ INSERT INTO `tconf_publics` (`id`, `name`, `age`, `scol`) VALUES
 (1, 'Non Renseigné', 1, NULL),
 (2, 'Enfants / Ados', 2, NULL),
 (3, 'Jeunes-Adultes', 3, NULL),
-(4, 'Adultes', 4, NULL);
+(4, 'Adultes', 4, NULL),
+(5, 'TPS/PS/CP', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -1012,7 +998,7 @@ ALTER TABLE `tconf_param`
 -- AUTO_INCREMENT pour la table `tconf_publics`
 --
 ALTER TABLE `tconf_publics`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `tconf_secteurs`
@@ -1170,6 +1156,3 @@ ALTER TABLE `tloc_pays`
   ADD CONSTRAINT `fk_nationalite_globreg1` FOREIGN KEY (`globreg_id`) REFERENCES `tloc_globreg` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
