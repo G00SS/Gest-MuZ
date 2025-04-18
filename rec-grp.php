@@ -27,8 +27,8 @@
       </div>
       <div class="card-body">
         <?php
-        $req = $dbh->prepare('SELECT tgrp.id as "ID" ,tgrp.create_date as "Date",tgrp.create_time as "Heure",tgrp.nb as "Nombre", tconf_grp_typ.scol as "", tconf_grp_typ.type as "Catégorie", tgrp.resi as "Issoldunois", tgrp.col as "Habitant Collectivité", tconf_atel.name as "Atelier", tconf_secteurs.name as "Secteur", tloc_depts.name as "Département",tloc_pays.name as "Pays" FROM `tgrp` INNER JOIN tconf_grp_typ ON tgrp.typ_id=tconf_grp_typ.id INNER JOIN tconf_atel ON tconf_atel.id = tgrp.atel_id INNER JOIN tconf_secteurs ON tconf_secteurs.id = tconf_atel.sect_id INNER JOIN tloc_depts ON tgrp.depts_id=tloc_depts.id INNER JOIN tloc_pays ON tgrp.pays_id=tloc_pays.id ORDER BY `id` DESC LIMIT 1000');
-        $req->execute();
+        $req = $dbh->prepare('SELECT tgrp.id as "ID" ,tgrp.create_date as "Date",tgrp.create_time as "Heure",tgrp.nb as "Nombre", tconf_grp_typ.scol as "", tconf_grp_typ.type as "Catégorie", tgrp.resi as ?, tgrp.col as ?, tconf_atel.name as "Atelier", tconf_secteurs.name as "Secteur", tloc_depts.name as "Département",tloc_pays.name as "Pays" FROM `tgrp` INNER JOIN tconf_grp_typ ON tgrp.typ_id=tconf_grp_typ.id INNER JOIN tconf_atel ON tconf_atel.id = tgrp.atel_id INNER JOIN tconf_secteurs ON tconf_secteurs.id = tconf_atel.sect_id INNER JOIN tloc_depts ON tgrp.depts_id=tloc_depts.id INNER JOIN tloc_pays ON tgrp.pays_id=tloc_pays.id ORDER BY `id` DESC LIMIT 1000');
+        $req->execute(array($resident,$collectivite));
         ?>
 
         <table id="grp-table" class="table table-striped nowrap" style="width:100%">
