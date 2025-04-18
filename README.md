@@ -21,10 +21,10 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 
 * Créer une base de donnée et son utilisateur pour l'application :</br>
 <code># mysql -u root -p</code></br>
-<code>mysql> CREATE USER 'gestmuz'@'localhost' IDENTIFIED BY 'PUT-YOUR-PASSWORD-HERE';</code>
-<code>mysql> CREATE DATABASE IF NOT EXISTS `bmus`;</code>
-<code>mysql> GRANT ALL PRIVILEGES ON `bmus`.* TO 'gestmuz'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;</code>
-<code>mysql> FLUSH PRIVILEGES;</code>
+<code>mysql> CREATE USER 'gestmuz'@'localhost' IDENTIFIED BY 'PUT-YOUR-PASSWORD-HERE';</code></br>
+<code>mysql> CREATE DATABASE IF NOT EXISTS `bmus`;</code></br>
+<code>mysql> GRANT ALL PRIVILEGES ON `bmus`.* TO 'gestmuz'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;</code></br>
+<code>mysql> FLUSH PRIVILEGES;</code></br>
 <code>mysql> QUIT;</code>
 
 * Récupérer le dossier du site web :</br>
@@ -41,10 +41,10 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 <code>index index.php index.html index.htm index.nginx-debian.html;</code></br>
 
 Et que le php-fpm (correspondant à votre version) soit activé avec l'existance de ces lignes :</br>
-<code> location ~ \.php$ {</code>
-<code>    fastcgi_pass unix:/run/php/php8.2-fpm.sock;</code>
-<code>    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;</code>
-<code>    include fastcgi_params;</code>
-<code>    include snippets/fastcgi-php.conf;</code>
-<code>  }</code>
+<code> location ~ \.php$ {</code></br>
+<code>    fastcgi_pass unix:/run/php/php8.2-fpm.sock;</code></br>
+<code>    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;</code></br>
+<code>    include fastcgi_params;</code></br>
+<code>    include snippets/fastcgi-php.conf;</code></br>
+<code>  }</code></br>
 
