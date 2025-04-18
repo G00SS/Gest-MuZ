@@ -72,7 +72,7 @@ systemctl enable php8.2-fpm --now
 systemctl reload nginx
 ```
 
-## Utiliser la Web Application
+## Utiliser l'Application Web
 ### Première connexion
 * Se connecter avec un navigateur web à l'addresse IP du serveur</br>
 <p align="center">
