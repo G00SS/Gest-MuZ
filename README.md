@@ -3,6 +3,12 @@ Une application web (PHP/MySQL) pour générer des statistiques de fréquentatio
 
 <code style="color : cyan">*A Web App (PHP/MySQL) to generate statistics on visits to a museum/touristic establishment...*</code>
 
+- text in red
++ text in green
+! text in orange
+# text in gray
+@@ text in purple (and bold)@@
+
 Cette application web permet d'enregistrer des informations sur les visiteurs d'un musée ou tout autre établissement touristique, qu'il s'agisse de visites individuelles ou de groupes, scolaires ou non.
 Il suffit de remplir un court formulaire pour chaque visite afin de générer automatiquement des statistiques sur la fréquentation, la provenance, les centres d'intérêt des visiteurs, etc.
 
