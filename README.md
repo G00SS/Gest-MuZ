@@ -43,15 +43,30 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 <code>root /var/www/html/;</code></br>
 <code>index index.php index.html index.htm index.nginx-debian.html;</code></br>
 
-   Et que le php-fpm (correspondant à votre version) soit activé avec l'existance de ces lignes :</br>
+   Et que le php-fpm (correspondant à votre version) soit activé avec l'existence de ces lignes (dé-commentées) :</br>
    <code> location ~ \.php$ {</code></br>
-   <code>    fastcgi_pass unix:/run/php/php8.2-fpm.sock;</code></br>
-   <code>    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;</code></br>
-   <code>    include fastcgi_params;</code></br>
    <code>    include snippets/fastcgi-php.conf;</code></br>
+   <code>    fastcgi_pass unix:/run/php/php8.2-fpm.sock;</code></br>
    <code>  }</code></br>
 
 * Redémarrer le serveur Web et php (correspondant à votre version) pour prendre en compte les modifications :</br> 
 <code># systemctl enable php8.2-fpm --now</code></br>
 <code># systemctl reload nginx</code></br>
 
+## Utiliser la Web Application / *Using the WebAPP*
+
+* Se connecter avec un navigateur web à l'addresse IP du serveur</br>
+
+* Entrer les identifiants par défaut : **admin / admin**</br>
+
+* Commencez par aller dans le menu Utilisateurs *(Paramètres>Utilisateurs)* pour modifier les comptes par défaut ou en créer de nouveaux</br>
+
+* Continuez en personnalisant votre structure *(Paramètres>Personnalisations)* afin de renseigner son nom, ses horaires d'ouverture...</br>
+
+* Découvrez la configuration de votre structure et adaptez-la en fonction de vos besoins *(Paramètres>Configuration)* </br>
+> Ces 3 menus ne sont accessibles qu'aux administrateurs du logiciel
+
+* Renseignez les activités de votre structure (les expositions programmées, les ateliers prévus, les évènements ponctuels à venir...) </br>
+> Ces 3 menus ne sont pas accessibles aux simples utilisateurs du logiciel
+
+# Vous pouvez dès à présent commencer à enregistrer vos visites !
