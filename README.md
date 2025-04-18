@@ -102,3 +102,17 @@ Vous pouvez aussi créer un compte standard (sans droit d'administration sur le 
 
 </br>
 <h2 align="center"><strong>Vous pouvez dès à présent commencer à enregistrer vos visites !</strong></h2>
+
+### Conseils et Informations
+* Seul le nombre des visiteurs est obligatoire pour valider un enregistrement. Le reste des informations se remplissent automatiquements ou restent simplement non renseignées .</br>
+
+* Renseigner le code postal des visiteurs suffit à en déduire leur provenance (les menus déroulants associés sont alors désactivés).</br>
+
+* Il est conseillé de cocher les informations sur la visite en commençant par les secteurs visités (ou tout le parcours de visite) puis de décocher les expositions non vues (le cas échéant) pour minimiser le nombre de cliques. Je vous laisse découvrir le mécanisme de séléction en cascade des expositions.</br>
+
+* Chaque enregistrement peut être modifié (et même supprimé) pour y apporter des précisions à postériori de la visite.</br>
+
+* L'horodatage des enregistrements ne peut pas être modifié. Il est généré automatiquement lors de l'enregistrement.</br>
+
+* Plus vous remplirez d'informations plus vos statistiques seront fins et représentatifs de l'activité du musée (jours et heures de fréquentations, classes d'âge, types de groupes ou catégorie de public pour les ateliers...).</br>
+
