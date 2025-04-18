@@ -21,11 +21,11 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 
 * Créer une base de donnée et son utilisateur pour l'application :</br>
 <code># mysql -u root -p</code></br>
-<code>mysql> CREATE USER 'gestmuz'@'localhost' IDENTIFIED BY 'PUT-YOUR-PASSWORD-HERE';
-mysql> CREATE DATABASE IF NOT EXISTS `bmus`;
-mysql> GRANT ALL PRIVILEGES ON `bmus`.* TO 'gestmuz'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
-mysql> FLUSH PRIVILEGES;
-mysql> QUIT;</code>
+<code>mysql> CREATE USER 'gestmuz'@'localhost' IDENTIFIED BY 'PUT-YOUR-PASSWORD-HERE';</code>
+<code>mysql> CREATE DATABASE IF NOT EXISTS `bmus`;</code>
+<code>mysql> GRANT ALL PRIVILEGES ON `bmus`.* TO 'gestmuz'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;</code>
+<code>mysql> FLUSH PRIVILEGES;</code>
+<code>mysql> QUIT;</code>
 
 * Récupérer le dossier du site web :</br>
 <code># wget https://github.com/G00SS/Gest-MuZ.git</code>
@@ -37,13 +37,14 @@ mysql> QUIT;</code>
 <code># mv gestmuz/* /var/www/html/</code>
 
 * Configurer le Virtual Host d'Nginx en editant le fichier /etc/nginx/site-available/default et en vérifiant que ces lignes existes :</br> 
-<code>root /var/www/html/;
-index index.php index.html index.htm index.nginx-debian.html;</code></br>
+<code>root /var/www/html/;</code>
+<code>index index.php index.html index.htm index.nginx-debian.html;</code></br>
+
 Et que le php-fpm (correspondant à votre version) soit activé avec l'existance de ces lignes :</br>
-<code>location ~ \.php$ {
-    fastcgi_pass unix:/run/php/php8.2-fpm.sock;
-    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-    include fastcgi_params;
-    include snippets/fastcgi-php.conf;
-  }</code>
+<code> location ~ \.php$ {</code>
+<code>    fastcgi_pass unix:/run/php/php8.2-fpm.sock;</code>
+<code>    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;</code>
+<code>    include fastcgi_params;</code>
+<code>    include snippets/fastcgi-php.conf;</code>
+<code>  }</code>
 
