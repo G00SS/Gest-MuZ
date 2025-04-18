@@ -92,13 +92,13 @@ Vous pouvez aussi créer un compte standard (sans droit d'administration sur le 
 
 * Continuez en personnalisant votre structure *(Paramètres>Personnalisations)* afin de renseigner son nom, ses horaires d'ouverture...</br>
 
-* Découvrez la configuration de votre structure et adaptez-la en fonction de vos besoins *(Paramètres>Configuration)* </br>
+* Découvrez la configuration de votre structure et adaptez-la en fonction de vos besoins *(Paramètres>Configuration)*</br>
     > Ces 3 menus ne sont accessibles qu'aux administrateurs du logiciel
 
 
 ### Paramétrage des prestations & activités
-* Renseignez les activités de votre structure (les **Expositions** programmées, les **Ateliers** prévus, les **Evènements** ponctuels à venir...) </br>
+* Renseignez les activités de votre structure (les **Expositions** programmées, les **Ateliers** prévus, les **Evènements** ponctuels à venir...)</br>
     > Ces 3 menus ne sont pas accessibles aux simples utilisateurs du logiciel
 
 </br>
-<h2 align="center"><strong>** Vous pouvez dès à présent commencer à enregistrer vos visites ! **</strong></h2>
+<h2 align="center"><strong>**  Vous pouvez dès à présent commencer à enregistrer vos visites !  **</strong></h2>
