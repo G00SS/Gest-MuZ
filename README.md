@@ -23,7 +23,7 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 
 * Récupérer le dossier du site web :</br>
 ```
-# wget https://github.com/G00SS/Gest-MuZ.git
+# git clone https://github.com/G00SS/Gest-MuZ.git gestmuz
 ```
 
 * Copier les fichiers du site Web à la racine du serveur Web :</br>
