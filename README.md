@@ -20,7 +20,7 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 
 ## Comment Essayer depuis un Systeme Vierge / *How to Try demo from Scratch*
 
-* Se connecter sur le serveur et y installer le serveur web Nginx, PHP, et MariaDB (MySQL) :
-  <code style="color : cyan">$ apt install nginx mariadb-server mariadb-client php php-fpm php-mbstring php-bcmath php-xml php-mysql php-common php-gd php-cli php-curl php-zip php-gd</code>
+* Se connecter sur le serveur et y installer le serveur web Nginx, PHP, et MariaDB (MySQL) :  
+<code style="color : cyan">$ apt install nginx mariadb-server mariadb-client php php-fpm php-mbstring php-bcmath php-xml php-mysql php-common php-gd php-cli php-curl php-zip php-gd</code>
 
 
