@@ -18,12 +18,14 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 
 * Se connecter sur le serveur et y installer le serveur web Nginx, PHP, et MariaDB (MySQL) :  
 <code># apt install nginx mariadb-server mariadb-client php php-fpm php-mbstring php-bcmath php-xml php-mysql php-common php-gd php-cli php-curl php-zip php-gd</code>
+
 * Créer une base de donnée et son utilisateur pour l'application :  
-<code># mysql -u root -p
-mysql> CREATE USER 'gestmuz'@'localhost' IDENTIFIED BY 'PUT-YOUR-PASSWORD-HERE';
+<code># mysql -u root -p</code>
+<code>mysql> CREATE USER 'gestmuz'@'localhost' IDENTIFIED BY 'PUT-YOUR-PASSWORD-HERE';
 mysql> CREATE DATABASE IF NOT EXISTS `bmus`;
 mysql> GRANT ALL PRIVILEGES ON `bmus`.* TO 'gestmuz'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
 mysql> FLUSH PRIVILEGES;
-mysql> QUIT;
-</code>
+mysql> QUIT;</code>
 
+* Récupérer le dossier du site web :  
+<code># apt install nginx mariadb-server mariadb-client php php-fpm php-mbstring php-bcmath php-xml php-mysql php-common php-gd php-cli php-curl php-zip php-gd</code>
