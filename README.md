@@ -16,8 +16,8 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 
 ## Comment Installer depuis un Systeme Vierge / *How to Install from Scratch*
 
-* Se connecter sur le serveur et y installer le serveur web Nginx, PHP, et MariaDB (MySQL) :</br>  
-<code># apt install nginx mariadb-server mariadb-client php php-fpm php-mbstring php-bcmath php-xml php-mysql php-common php-gd php-cli php-curl php-zip php-gd</code>
+* Se connecter sur le serveur et y installer le serveur Web Nginx, PHP, et MariaDB (MySQL) :</br>  
+<code># apt install nginx mariadb-server mariadb-client php php-fpm php-mysql php-common</code>
 
 * Récupérer le dossier du site web :</br>
 <code># wget https://github.com/G00SS/Gest-MuZ.git</code>
@@ -51,7 +51,7 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
    <code>    include snippets/fastcgi-php.conf;</code></br>
    <code>  }</code></br>
 
-* Redémarrer le serveur pour prendre en compte les modifications :</br> 
+* Redémarrer le serveur Web et php (correspondant à votre version) pour prendre en compte les modifications :</br> 
 <code># systemctl enable php8.2-fpm --now</code></br>
 <code># systemctl reload nginx</code></br>
 
