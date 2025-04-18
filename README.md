@@ -77,7 +77,7 @@ index index.php index.html index.htm index.nginx-debian.html;
 
 * Se connecter avec un navigateur web à l'addresse IP du serveur</br>
 
-* Entrer les identifiants par défaut : **admin / admin**</br>
+* Entrer les identifiants par défaut : **admin / admin** pour le compte administrateur, ou **superviseur / super** pour le compte superviseur, ou **user / user** pour un compte utilisateur standard.</br>Vous pouvez aussi créer un compte standard (sans droit d'administration sur le paramétrage de l'application) directement via le formulaire d'inscription.
 
 * Commencez par aller dans le menu Utilisateurs *(Paramètres>Utilisateurs)* pour modifier les comptes par défaut ou en créer de nouveaux</br>
 
