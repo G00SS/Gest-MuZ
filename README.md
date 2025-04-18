@@ -18,7 +18,7 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 
 * Se connecter sur le serveur et y installer le serveur Web Nginx, PHP, et MariaDB (MySQL) :</br>  
 ```
-# apt install nginx mariadb-server mariadb-client php php-fpm php-mysql php-common
+# apt install nginx mariadb-server mariadb-client php php-fpm php-mysql php-common git
 ```
 
 * Récupérer le dossier du site web :</br>
