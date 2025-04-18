@@ -20,9 +20,9 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 <code># apt install nginx mariadb-server mariadb-client php php-fpm php-mysql php-common</code>
 
 * Récupérer le dossier du site web :</br>
-'''
+```
 # wget https://github.com/G00SS/Gest-MuZ.git
-'''
+```
 
 * Copier les fichiers du site Web à la racine du serveur Web :</br>
 <code># mv gestmuz/* /var/www/html/</code>
