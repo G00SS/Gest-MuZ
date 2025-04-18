@@ -1,0 +1,162 @@
+/*##########################################################################
+# @Name : global.css
+# @Description : css personnalisés en surcouche du Bundle de css (css.php) 
+# @Call : index.php
+# @Parameters : 
+# @Author : G0osS
+# @Create : 31/01/2024
+# @Update : 15/04/2025
+# @Version : 2.0.0
+##########################################################################*/
+
+
+/*#### Positionnement du contenu ####*/
+body {
+  /*min-height: 75rem;*/
+  padding-top: 5rem;
+  padding-bottom: 10rem;
+  background-color: #e9ecef;
+}
+
+/*#### Supprimer les flèches haut/bas pour les inputs de nombres ####*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+/*#### Supprimer le soulignage des liens dans les tableaux (loupes et croix) ####*/
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: col-xs-auto col-sm-6 col-md-4none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+
+
+/*### Cadre autour des Champs ###*/
+.test {
+  border: 3px solid darkslategrey;
+  border-radius: 1rem;
+}
+
+
+/*### Effet Card ###*/
+.sepa {
+  padding: 1.5rem;
+  margin: 0rem 0.3rem 1.2rem;
+  border-radius: 0.8rem;
+  background: white;
+}
+
+
+/*### No More Blue ###*/
+.nav-item.dropdown .dropdown-item:active {
+  background-color: #adb5bd !important;
+}
+
+.dropdown-item.active {
+  background-color: #adb5bd !important;
+}
+
+.pagination > li > a, .pagination > li > span{
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.pagination > li.active > a, .pagination > li.active > span{
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control::before {
+  background-color: #6c757d;
+}
+
+
+
+
+/*### Graphique ###*/
+.chart-container {
+  position: relative;
+  margin: auto;
+  height: 140vmax;
+}
+
+
+/*### Création des Infobulles ###*/
+.infobulleping {
+  position: relative;  /* les .infobulle deviennent référents */
+  cursor: help;
+}
+
+/* on génère un élément :after lors du survol et du focus :*/
+
+.infobulleping:hover::after,
+.infobulleping:focus::after {
+  content: attr(aria-label);  /* on affiche aria-label */
+  width: 20em;
+  font-weight: bold;
+  padding: 0.3em;
+  border: 2px solid darkslategrey;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  top: 1.5em;
+  /*left: 50%;*/
+  transform: translateX(-50%); /* on centre horizontalement  */
+  z-index: 1; /* pour s'afficher au dessus des éléments en position relative */
+  /*white-space: nowrap;  on interdit le retour à la ligne */
+}
+
+
+.infobulle {
+  position: relative;  /* les .infobulle deviennent référents */
+  cursor: help;
+}
+
+/* on génère un élément :after lors du survol et du focus :*/
+
+.infobulle:hover::after,
+.infobulle:focus::after {
+  content: attr(aria-label);  /* on affiche aria-label */
+  font-size: 0.75em;
+  /*font-weight: lighter; */
+  width: 400px;
+  padding: 0.3em;
+  border: 2px solid darkslategrey;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  top: 1.5em;
+  /*left: 50%;*/
+  /*transform: translateX(-50%);  on centre horizontalement  */
+  z-index: 1; /* pour s'afficher au dessus des éléments en position relative */
+  white-space: pre-wrap;   /* gestion des retours à la ligne */
+}
+
+/*### readonly text input discret ###*/
+input[readonly].discret{
+  background-color:transparent;
+}
+
+canvas { 
+  width: 100%;
+  min-height: 300;
+}
