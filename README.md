@@ -25,7 +25,7 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 ```
 
 * Copier les fichiers du site Web à la racine du serveur Web :</br>
-<code># mv gestmuz/* /var/www/html/</code>
+```# mv gestmuz/* /var/www/html/```
 
 * Créer une base de données et son utilisateur pour l'application :</br>
 ```# mysql -u root -p```
@@ -38,24 +38,30 @@ mysql> QUIT;
 ```
 
 * Importer la structure de la base de données</br> 
-<code># mysql -u gestmuz -p bmus < /var/www/html/bdd/bmus.sql</code>
+```# mysql -u gestmuz -p bmus < /var/www/html/bdd/bmus.sql```
 
 * Editer le fichier gestmuz/inc/bd.php afin qu'il corresponde à votre base de données en modifiant la ligne 5 :</br>
-<code>$dbh = new PDO('mysql:host=localhost;dbname=bmus;charset=utf8', 'gestmuz', 'PUT-YOUR-PASSWORD-HERE');</code>
+```$dbh = new PDO('mysql:host=localhost;dbname=bmus;charset=utf8', 'gestmuz', 'PUT-YOUR-PASSWORD-HERE');```
 
 * Configurer le Virtual Host d'Nginx en editant le fichier /etc/nginx/site-available/default et en vérifiant que ces lignes existes :</br> 
-<code>root /var/www/html/;</code></br>
-<code>index index.php index.html index.htm index.nginx-debian.html;</code></br>
+```
+root /var/www/html/;
+index index.php index.html index.htm index.nginx-debian.html;
+```
 
    Et que le php-fpm (correspondant à votre version) soit activé avec l'existence de ces lignes (dé-commentées) :</br>
-   <code> location ~ \.php$ {</code></br>
-   <code>    include snippets/fastcgi-php.conf;</code></br>
-   <code>    fastcgi_pass unix:/run/php/php8.2-fpm.sock;</code></br>
-   <code>  }</code></br>
+```
+ location ~ \.php$ {
+    include snippets/fastcgi-php.conf;
+    fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+  }
+```
 
 * Redémarrer le serveur Web et php (correspondant à votre version) pour prendre en compte les modifications :</br> 
-<code># systemctl enable php8.2-fpm --now</code></br>
-<code># systemctl reload nginx</code></br>
+```
+# systemctl enable php8.2-fpm --now
+# systemctl reload nginx
+```
 
 ## Utiliser la Web Application / *Using the WebAPP*
 
