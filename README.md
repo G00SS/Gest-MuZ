@@ -19,7 +19,13 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 * Se connecter sur le serveur et y installer le serveur web Nginx, PHP, et MariaDB (MySQL) :</br>  
 <code># apt install nginx mariadb-server mariadb-client php php-fpm php-mbstring php-bcmath php-xml php-mysql php-common php-gd php-cli php-curl php-zip php-gd</code>
 
-* Créer une base de donnée et son utilisateur pour l'application :</br>
+* Récupérer le dossier du site web :</br>
+<code># wget https://github.com/G00SS/Gest-MuZ.git</code>
+
+* Copier les fichiers du site Web à la racine du serveur Web :</br>
+<code># mv gestmuz/* /var/www/html/</code>
+
+* Créer une base de données et son utilisateur pour l'application :</br>
 <code># mysql -u root -p</code></br>
 <code>mysql> CREATE USER 'gestmuz'@'localhost' IDENTIFIED BY 'PUT-YOUR-PASSWORD-HERE';</code></br>
 <code>mysql> CREATE DATABASE IF NOT EXISTS `bmus`;</code></br>
@@ -27,24 +33,22 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 <code>mysql> FLUSH PRIVILEGES;</code></br>
 <code>mysql> QUIT;</code>
 
-* Récupérer le dossier du site web :</br>
-<code># wget https://github.com/G00SS/Gest-MuZ.git</code>
+* Importer la structure de la base de données</br> 
+<code># mysql -u gestmuz -p bmus < /var/www/html/bdd/bmus.sql</code>
 
 * Editer le fichier gestmuz/inc/bd.php afin qu'il corresponde à votre base de données en modifiant la ligne 5 :</br>
 <code>$dbh = new PDO('mysql:host=localhost;dbname=bmus;charset=utf8', 'gestmuz', 'PUT-YOUR-PASSWORD-HERE');</code>
-
-* Copier les fichiers du site Web à la racine du serveur Web :</br>
-<code># mv gestmuz/* /var/www/html/</code>
 
 * Configurer le Virtual Host d'Nginx en editant le fichier /etc/nginx/site-available/default et en vérifiant que ces lignes existes :</br> 
 <code>root /var/www/html/;</code>
 <code>index index.php index.html index.htm index.nginx-debian.html;</code></br>
 
-Et que le php-fpm (correspondant à votre version) soit activé avec l'existance de ces lignes :</br>
-<code> location ~ \.php$ {</code></br>
-<code>    fastcgi_pass unix:/run/php/php8.2-fpm.sock;</code></br>
-<code>    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;</code></br>
-<code>    include fastcgi_params;</code></br>
-<code>    include snippets/fastcgi-php.conf;</code></br>
-<code>  }</code></br>
+   Et que le php-fpm (correspondant à votre version) soit activé avec l'existance de ces lignes :</br>
+   <code> location ~ \.php$ {</code></br>
+   <code>    fastcgi_pass unix:/run/php/php8.2-fpm.sock;</code></br>
+   <code>    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;</code></br>
+   <code>    include fastcgi_params;</code></br>
+   <code>    include snippets/fastcgi-php.conf;</code></br>
+   <code>  }</code></br>
+
 
