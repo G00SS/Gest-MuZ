@@ -17,7 +17,9 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 ## Comment Installer depuis un Systeme Vierge / *How to Install from Scratch*
 
 * Se connecter sur le serveur et y installer le serveur Web Nginx, PHP, et MariaDB (MySQL) :</br>  
-```# apt install nginx mariadb-server mariadb-client php php-fpm php-mysql php-common```
+```
+# apt install nginx mariadb-server mariadb-client php php-fpm php-mysql php-common
+```
 
 * Récupérer le dossier du site web :</br>
 ```
@@ -25,10 +27,14 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 ```
 
 * Copier les fichiers du site Web à la racine du serveur Web :</br>
-```# mv gestmuz/* /var/www/html/```
+```
+# mv gestmuz/* /var/www/html/
+```
 
 * Créer une base de données et son utilisateur pour l'application :</br>
-```# mysql -u root -p```
+```
+# mysql -u root -p
+```
 ```
 mysql> CREATE USER 'gestmuz'@'localhost' IDENTIFIED BY 'PUT-YOUR-PASSWORD-HERE';
 mysql> CREATE DATABASE IF NOT EXISTS `bmus`;
@@ -38,10 +44,14 @@ mysql> QUIT;
 ```
 
 * Importer la structure de la base de données</br> 
-```# mysql -u gestmuz -p bmus < /var/www/html/bdd/bmus.sql```
+```
+# mysql -u gestmuz -p bmus < /var/www/html/bdd/bmus.sql
+```
 
 * Editer le fichier gestmuz/inc/bd.php afin qu'il corresponde à votre base de données en modifiant la ligne 5 :</br>
-```$dbh = new PDO('mysql:host=localhost;dbname=bmus;charset=utf8', 'gestmuz', 'PUT-YOUR-PASSWORD-HERE');```
+```
+$dbh = new PDO('mysql:host=localhost;dbname=bmus;charset=utf8', 'gestmuz', 'PUT-YOUR-PASSWORD-HERE');
+```
 
 * Configurer le Virtual Host d'Nginx en editant le fichier /etc/nginx/site-available/default et en vérifiant que ces lignes existes :</br> 
 ```
