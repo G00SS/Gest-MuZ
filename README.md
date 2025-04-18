@@ -20,7 +20,9 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 <code># apt install nginx mariadb-server mariadb-client php php-fpm php-mysql php-common</code>
 
 * Récupérer le dossier du site web :</br>
-<code># wget https://github.com/G00SS/Gest-MuZ.git</code>
+'''
+# wget https://github.com/G00SS/Gest-MuZ.git
+'''
 
 * Copier les fichiers du site Web à la racine du serveur Web :</br>
 <code># mv gestmuz/* /var/www/html/</code>
@@ -69,4 +71,4 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 * Renseignez les activités de votre structure (les expositions programmées, les ateliers prévus, les évènements ponctuels à venir...) </br>
 > Ces 3 menus ne sont pas accessibles aux simples utilisateurs du logiciel
 
-# Vous pouvez dès à présent commencer à enregistrer vos visites !
+**Vous pouvez dès à présent commencer à enregistrer vos visites !**
