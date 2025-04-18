@@ -874,8 +874,8 @@
             $req = $dbh->prepare('SELECT tloc_pays.id AS ID, tloc_pays.name AS "Pays", tconf_publics.scol AS scol, ROUND(COUNT(tgrp.id) / tconf_atel.seance ) AS "NbGrpes", SUM(ROUND((tgrp.nb) / tconf_atel.seance )) AS "Effectif" FROM tgrp INNER JOIN tloc_pays ON tloc_pays.id = tgrp.pays_id INNER JOIN tconf_atel ON tconf_atel.id = tgrp.atel_id INNER JOIN tconf_publics ON tconf_publics.id = tgrp.public_id WHERE tloc_pays.id=? AND tgrp.create_date BETWEEN ? AND ? GROUP BY tconf_publics.scol ORDER BY tconf_publics.scol ASC');
             $req->execute([$default_pays,$_POST['dateFrom'],$_POST['dateTo']]);
 
-            $GrpFrScol= [];
-            $EffFrScol= [];
+            $GrpFrScol= [Null,Null];
+            $EffFrScol= [Null,Null];
 
             while($row=$req->fetch(PDO::FETCH_ASSOC)) {
               extract($row);
