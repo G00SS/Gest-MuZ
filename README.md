@@ -48,7 +48,7 @@ mysql> QUIT;
 # mysql -u gestmuz -p bmus < /var/www/html/bdd/bmus.sql
 ```
 
-* Editer le fichier gestmuz/inc/bd.php afin qu'il corresponde à votre base de données en modifiant la ligne 5 :</br>
+* Editer le fichier gestmuz/inc/bd.php afin qu'il corresponde à votre base de données en modifiant la ligne 17 :</br>
 ```
 $dbh = new PDO('mysql:host=localhost;dbname=bmus;charset=utf8', 'gestmuz', 'PUT-YOUR-PASSWORD-HERE');
 ```
