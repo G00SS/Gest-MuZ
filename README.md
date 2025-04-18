@@ -40,7 +40,7 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 <code>$dbh = new PDO('mysql:host=localhost;dbname=bmus;charset=utf8', 'gestmuz', 'PUT-YOUR-PASSWORD-HERE');</code>
 
 * Configurer le Virtual Host d'Nginx en editant le fichier /etc/nginx/site-available/default et en vérifiant que ces lignes existes :</br> 
-<code>root /var/www/html/;</code>
+<code>root /var/www/html/;</code></br>
 <code>index index.php index.html index.htm index.nginx-debian.html;</code></br>
 
    Et que le php-fpm (correspondant à votre version) soit activé avec l'existance de ces lignes :</br>
@@ -51,4 +51,7 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
    <code>    include snippets/fastcgi-php.conf;</code></br>
    <code>  }</code></br>
 
+* Redémarrer le serveur pour prendre en compte les modifications :</br> 
+<code># systemctl enable php8.2-fpm --now</code></br>
+<code># systemctl reload nginx</code></br>
 
