@@ -28,4 +28,22 @@ mysql> FLUSH PRIVILEGES;
 mysql> QUIT;</code>
 
 * Récupérer le dossier du site web :  
-<code># apt install nginx mariadb-server mariadb-client php php-fpm php-mbstring php-bcmath php-xml php-mysql php-common php-gd php-cli php-curl php-zip php-gd</code>
+<code># wget https://github.com/G00SS/Gest-MuZ.git</code>
+
+* Editer le fichier gestmuz/inc/bd.php afin qu'il corresponde à votre base de données en modifiant la ligne 5 :  
+<code>$dbh = new PDO('mysql:host=localhost;dbname=bmus;charset=utf8', 'gestmuz', 'PUT-YOUR-PASSWORD-HERE');</code>
+
+* Copier les fichiers du site Web à la racine du serveur Web :  
+<code># mv gestmuz/* /var/www/html/</code>
+
+* Configurer le Virtual Host d'Nginx en editant le fichier /etc/nginx/site-available/default et en vérifiant que ces lignes existes :  
+<code>root /var/www/html/;
+index index.php index.html index.htm index.nginx-debian.html;</code>
+Et que le php-fpm (correspondant à votre version) soit activé avec l'existance de ces lignes :
+<code>location ~ \.php$ {
+    fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    include fastcgi_params;
+    include snippets/fastcgi-php.conf;
+  }</code>
+
