@@ -9,7 +9,7 @@ Il suffit de remplir un court formulaire pour chaque visite afin de générer au
 *This french web application allows you to record informations about visitors to an establishment, whether they are individual visits or groups, whether school-based or not.
 Simply fill out a short form for each visit to automatically generate statistics on attendance, origin, interests, and more.*
 
-![Gest'Muz dashboard screenshot](/img/gestmuz2.png)
+![Gest'Muz dashboard screenshot](/img/gestmuz4.png)
 
 ## Pré-Requis / *Prerequisites*
 Écrite principalement en HTML et PHP, cette application web nécessite uniquement un serveur web opérationnel avec une version minimale de PHP 7.0 et un accès à un serveur MySQL. Elle peut donc fonctionner sur une instance XAMP, une machine virtuelle Linux, un Raspberry Pi ou tout autre ordinateur répondant à ces exigences.</br>
