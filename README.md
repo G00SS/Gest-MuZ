@@ -1,13 +1,7 @@
 # Gest'MuZ
 Une application web (PHP/MySQL) pour générer des statistiques de fréquentation d'un musée ou d'un établissement touristique...
 
-<code style="color : cyan">*A Web App (PHP/MySQL) to generate statistics on visits to a museum/touristic establishment...*</code>
-
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
+*A Web App (PHP/MySQL) to generate statistics on visits to a museum/touristic establishment...*
 
 Cette application web permet d'enregistrer des informations sur les visiteurs d'un musée ou tout autre établissement touristique, qu'il s'agisse de visites individuelles ou de groupes, scolaires ou non.
 Il suffit de remplir un court formulaire pour chaque visite afin de générer automatiquement des statistiques sur la fréquentation, la provenance, les centres d'intérêt des visiteurs, etc.
@@ -27,6 +21,6 @@ Les instructions d'installation et d'utilisation suivantes sont basées sur une 
 ## Comment Essayer depuis un Systeme Vierge / *How to Try demo from Scratch*
 
 * Se connecter sur le serveur et y installer le serveur web Nginx, PHP, et MariaDB (MySQL) :
-$ apt install nginx mariadb-server mariadb-client php php-fpm php-mbstring php-bcmath php-xml php-mysql php-common php-gd php-cli php-curl php-zip php-gd
+<code style="color : cyan">$ apt install nginx mariadb-server mariadb-client php php-fpm php-mbstring php-bcmath php-xml php-mysql php-common php-gd php-cli php-curl php-zip php-gd</code>
 
 
