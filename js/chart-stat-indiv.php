@@ -1732,7 +1732,7 @@
                 }
             }
         },
-        color: '#ffffff',
+        color: '#1f343d',
         anchor: 'center'
         }
       },{
@@ -1758,7 +1758,7 @@
                 }
             }
         },
-        color: '#ffffff',
+        color: '#1f343d',
         anchor: 'center'
         }
       }]
@@ -1769,8 +1769,8 @@
         type: 'bar',
         data: dataGraphDEP,
         options: {
-          responsive: true,
-          aspectRatio: 2,
+          responsive: false,
+          aspectRatio: 0.5,
           maintainAspectRatio: false,
           indexAxis: 'y',
           scales: {
@@ -1886,7 +1886,6 @@
         data: dataGraphIPI,
         options: {
           responsive: true,
-          aspectRatio: 2,
           maintainAspectRatio: false,
           indexAxis: 'y',
           scales: {
@@ -2003,7 +2002,7 @@
         options: {
           responsive: true,
           aspectRatio: 2,
-          maintainAspectRatio: true,
+          maintainAspectRatio: false,
           indexAxis: 'y',
           scales: {
             x: {
