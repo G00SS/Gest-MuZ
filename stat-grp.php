@@ -869,7 +869,7 @@
 
         <div class="row justify-content-around mb-2">
           <!-- GRAPHIQUE EFFECTIFS FRANCAIS -->
-          <div class="col-xs-auto col-md-6 col-lg-2 mb-2 d-none d-lg-block">
+          <div class="col-xs-auto col-md-6 col-lg-2 mb-2">
             <?php
             $req = $dbh->prepare('SELECT tloc_pays.id AS ID, tloc_pays.name AS "Pays", tconf_publics.scol AS scol, ROUND(COUNT(tgrp.id) / tconf_atel.seance ) AS "NbGrpes", SUM(ROUND((tgrp.nb) / tconf_atel.seance )) AS "Effectif" FROM tgrp INNER JOIN tloc_pays ON tloc_pays.id = tgrp.pays_id INNER JOIN tconf_atel ON tconf_atel.id = tgrp.atel_id INNER JOIN tconf_publics ON tconf_publics.id = tgrp.public_id WHERE tloc_pays.id=? AND tgrp.create_date BETWEEN ? AND ? GROUP BY tconf_publics.scol ORDER BY tconf_publics.scol ASC');
             $req->execute([$default_pays,$_POST['dateFrom'],$_POST['dateTo']]);
@@ -958,9 +958,57 @@
 
             <canvas id="GraphDoughREG"></canvas>
           </div>
+        
+          <!-- GRAPHIQUE REPARTITION EFFECTIFS/REGIONGLOBE -->
+          <div class="col-xs-auto col-md-6 col-lg-5 col-xl-4 mb-2 d-none d-lg-block">
+            <?php
+            // Récupération des effectifs par régions globales et primo
+            $req = $dbh->prepare('SELECT tloc_globreg.id AS ID, tloc_globreg.name AS "name", tconf_publics.scol AS scol, ROUND(COUNT(tgrp.id) / tconf_atel.seance ) AS "NbGrpes", SUM(ROUND((tgrp.nb) / tconf_atel.seance )) AS "Effectif" FROM tgrp INNER JOIN tloc_pays ON tloc_pays.id = tgrp.pays_id INNER JOIN tconf_atel ON tconf_atel.id = tgrp.atel_id INNER JOIN tconf_publics ON tconf_publics.id = tgrp.public_id INNER JOIN tloc_globreg ON tloc_globreg.id = tloc_pays.globreg_id WHERE  tloc_pays.id <> ? AND tgrp.create_date BETWEEN ? AND ? GROUP BY tloc_globreg.id,tconf_publics.scol ORDER BY tloc_globreg.id,tconf_publics.scol ASC');
+            $req->execute([$default_pays,$_POST['dateFrom'],$_POST['dateTo']]);
+            $LabelGRP=[];
+            $effIGR=[];
+            $effIGRP=[];
 
+            // Insertion des effectif en fonction de l'ID des régions globales et primo
+            while($row=$req->fetch(PDO::FETCH_ASSOC)) {
+              extract($row);
+              if ($ID != 18) {
+                $LabelGRP[$ID] = $name;
+                if ($scol == 0) {
+                  $effIGRP[$ID] = $Effectif;
+                } else {
+                  $effIGR[$ID] = $Effectif;
+                }
+              }
+            }
+            $req->closeCursor();
+            foreach ($LabelGRP as $i => $x) {
+              if (array_key_exists($i,$effIGR)) {
+                // code...
+              } else {
+                $effIGR[$i]=Null;
+              }
+              if (array_key_exists($i,$effIGRP)) {
+                // code...
+              } else {
+                $effIGRP[$i]=Null;
+              }
+            }
+            ksort($effIGR);
+            ksort($effIGRP);
+
+            // Reset des keys de l'array
+            $LabelGRP = array_values($LabelGRP);
+            $effIGRP = array_values($effIGRP);
+            $effIGR = array_values($effIGR);
+            ?>
+            <canvas id="GraphIRG"></canvas>
+          </div>
+        </div>
+
+        <div class="row justify-content-around mb-2">
           <!-- GRAPHIQUE REPARTITION EFFECTIFS/DEPARTEMENTS -->
-          <div class="col-xs-auto col-md-6 col-lg-5 col-xl-6 mb-2">
+          <div class="col-xs-auto col-md-6 mb-2">
             <?php
             // Récupération des effectifs par départements et primo
             $req = $dbh->prepare('SELECT tloc_depts.id AS ID, tloc_depts.name AS "name", tconf_publics.scol AS scol, ROUND(COUNT(tgrp.id) / tconf_atel.seance ) AS "NbGrpes", SUM(ROUND((tgrp.nb) / tconf_atel.seance )) AS "Effectif" FROM tgrp INNER JOIN tloc_depts ON tloc_depts.id = tgrp.depts_id INNER JOIN tconf_atel ON tconf_atel.id = tgrp.atel_id INNER JOIN tconf_publics ON tconf_publics.id = tgrp.public_id WHERE tloc_depts.reg_id<>? AND tgrp.create_date BETWEEN ? AND ? GROUP BY tloc_depts.nb,tconf_publics.scol ORDER BY tloc_depts.id,tconf_publics.scol ASC');
@@ -1006,9 +1054,6 @@
             ?>
             <canvas id="GraphDEP"></canvas>
           </div>
-        </div>
-
-        <div class="row justify-content-around mb-2">
           <!-- GRAPHIQUE REPARTITION EFFECTIFS/PAYS -->
           <div class="col-xs-auto col-md-6 mb-2">
             <?php
@@ -1056,52 +1101,7 @@
             ?>
             <canvas id="GraphIPI"></canvas>
           </div>
-        
-          <!-- GRAPHIQUE REPARTITION EFFECTIFS/REGIONGLOBE -->
-          <div class="col-xs-auto col-md-6 mb-2">
-            <?php
-            // Récupération des effectifs par régions globales et primo
-            $req = $dbh->prepare('SELECT tloc_globreg.id AS ID, tloc_globreg.name AS "name", tconf_publics.scol AS scol, ROUND(COUNT(tgrp.id) / tconf_atel.seance ) AS "NbGrpes", SUM(ROUND((tgrp.nb) / tconf_atel.seance )) AS "Effectif" FROM tgrp INNER JOIN tloc_pays ON tloc_pays.id = tgrp.pays_id INNER JOIN tconf_atel ON tconf_atel.id = tgrp.atel_id INNER JOIN tconf_publics ON tconf_publics.id = tgrp.public_id INNER JOIN tloc_globreg ON tloc_globreg.id = tloc_pays.globreg_id WHERE  tloc_pays.id <> ? AND tgrp.create_date BETWEEN ? AND ? GROUP BY tloc_globreg.id,tconf_publics.scol ORDER BY tloc_globreg.id,tconf_publics.scol ASC');
-            $req->execute([$default_pays,$_POST['dateFrom'],$_POST['dateTo']]);
-            $LabelGRP=[];
-            $effIGR=[];
-            $effIGRP=[];
 
-            // Insertion des effectif en fonction de l'ID des régions globales et primo
-            while($row=$req->fetch(PDO::FETCH_ASSOC)) {
-              extract($row);
-              if ($ID != 18) {
-                $LabelGRP[$ID] = $name;
-                if ($scol == 0) {
-                  $effIGRP[$ID] = $Effectif;
-                } else {
-                  $effIGR[$ID] = $Effectif;
-                }
-              }
-            }
-            $req->closeCursor();
-            foreach ($LabelGRP as $i => $x) {
-              if (array_key_exists($i,$effIGR)) {
-                // code...
-              } else {
-                $effIGR[$i]=Null;
-              }
-              if (array_key_exists($i,$effIGRP)) {
-                // code...
-              } else {
-                $effIGRP[$i]=Null;
-              }
-            }
-            ksort($effIGR);
-            ksort($effIGRP);
-
-            // Reset des keys de l'array
-            $LabelGRP = array_values($LabelGRP);
-            $effIGRP = array_values($effIGRP);
-            $effIGR = array_values($effIGR);
-            ?>
-            <canvas id="GraphIRG"></canvas>
-          </div>
         </div>
 
       </div>
